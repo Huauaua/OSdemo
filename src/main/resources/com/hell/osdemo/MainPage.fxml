@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hell.osdemo.MainController">
+
+   <!-- 顶部：标题栏 -->
+   <top>
+      <HBox alignment="CENTER" style="-fx-background-color: linear-gradient(to right, #2c3e50, #3498db); -fx-padding: 15;">
+         <children>
+            <Label blendMode="SRC_ATOP" style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;" text="操作系统同步问题演示系统">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+
+   <!-- 左侧：导航菜单 -->
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="485.0" prefWidth="211.0" spacing="10" style="-fx-background-color: #f8f9fa; -fx-border-color: #dee2e6; -fx-border-width: 0 1 0 0;">
+         <padding>
+            <Insets bottom="10" left="10" right="10" top="30" />
+         </padding>
+
+         <Label style="-fx-font-weight: bold; -fx-font-size: 16; -fx-text-fill: #495057;" text="同步问题类型" />
+         <Rectangle fill="#3498db" height="2" width="160" />
+
+         <VBox alignment="TOP_CENTER" spacing="8">
+            <Button fx:id="producerConsumerBtn" mnemonicParsing="false" onAction="#showProducerConsumerDemo" prefHeight="40.0" prefWidth="160.0" style="-fx-font-size: 14; -fx-background-color: #3498db; -fx-text-fill: white;" text="生产者-消费者" />
+
+            <Button fx:id="diningPhilosopherBtn" mnemonicParsing="false" onAction="#showDiningPhilosopherDemo" prefHeight="40.0" prefWidth="160.0" style="-fx-font-size: 14; -fx-background-color: #6c757d; -fx-text-fill: white;" text="哲学家就餐" />
+
+            <Button fx:id="readerWriterBtn" mnemonicParsing="false" onAction="#showReaderWriterDemo" prefHeight="40.0" prefWidth="160.0" style="-fx-font-size: 14; -fx-background-color: #6c757d; -fx-text-fill: white;" text="读者-写者" />
+         </VBox>
+
+         <VBox alignment="BOTTOM_CENTER" spacing="5" style="-fx-padding: 40 0 0 0;">
+            <Label style="-fx-font-weight: bold; -fx-font-size: 14; -fx-text-fill: #495057;" text="系统信息">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Label>
+            <Text fx:id="infoText" style="-fx-font-size: 12; -fx-fill: #6c757d;" text="请选择演示类型" />
+         </VBox>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <StackPane fx:id="demoPane" layoutX="384.0" layoutY="469.0" prefHeight="486.0" prefWidth="690.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
+
+            <!-- 默认欢迎界面 -->
+            <VBox alignment="CENTER" fillWidth="false" prefHeight="481.0" prefWidth="690.0" spacing="30" style="-fx-background-color: #f8f9fa;">
+               <Label style="-fx-font-size: 28; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text=" 欢迎使用操作系统同步问题演示系统" />
+
+               <VBox alignment="CENTER" spacing="15">
+                  <Label style="-fx-font-size: 16; -fx-text-fill: #7f8c8d;" text="请从左侧菜单中选择要演示的同步问题" />
+
+                  <HBox alignment="CENTER" spacing="20">
+                     <VBox alignment="CENTER" prefWidth="160.0" spacing="10" style="-fx-background-color: white; -fx-border-color: #3498db; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 20;">
+                        <Circle fill="#3498db" radius="30" />
+                        <Label style="-fx-font-weight: bold;" text="生产者-消费者" />
+                        <Label style="-fx-font-size: 12; -fx-text-fill: #7f8c8d;" text="演示进程同步与互斥" />
+                     </VBox>
+
+                     <VBox alignment="CENTER" prefWidth="160.0" spacing="10" style="-fx-background-color: white; -fx-border-color: #9b59b6; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 20;">
+                        <Circle fill="#9b59b6" radius="30" />
+                        <Label style="-fx-font-weight: bold;" text="哲学家就餐" />
+                        <Label style="-fx-font-size: 12; -fx-text-fill: #7f8c8d;" text="演示死锁与避免" />
+                     </VBox>
+
+                     <VBox alignment="CENTER" prefWidth="160.0" spacing="10" style="-fx-background-color: white; -fx-border-color: #e74c3c; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 20;">
+                        <Circle fill="#e74c3c" radius="30" />
+                        <Label style="-fx-font-weight: bold;" text="读者-写者" />
+                        <Label style="-fx-font-size: 12; -fx-text-fill: #7f8c8d;" text="演示读写同步" />
+                     </VBox>
+                  </HBox>
+               </VBox>
+            </VBox>
+
+            <!-- 这里将通过控制器动态切换不同的演示面板 -->
+
+         </StackPane>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <AnchorPane blendMode="DARKEN" style="-fx-background-color: lightgray;" BorderPane.alignment="CENTER">
+         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="268.0" layoutY="14.0" prefHeight="53.0" prefWidth="350.0" style="-fx-font-size: 12;" text="操作系统课程设计 © 2025/12/1" textFill="#727272" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="268.0" AnchorPane.rightAnchor="282.0">
+            <font>
+               <Font size="34.0" />
+            </font>
+         </Label>
+      </AnchorPane>
+   </bottom>
+
+</BorderPane>

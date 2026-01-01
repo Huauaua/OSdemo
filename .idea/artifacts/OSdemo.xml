@@ -1,0 +1,29 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="OSdemo">
+    <output-path>$PROJECT_DIR$/out/artifacts/OSdemo</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="alias" value="" />
+        <option name="appClass" value="com.hell.osdemo.MainApp" />
+        <option name="convertCss2Bin" value="true" />
+        <option name="description" value="演示了三种进程同步的问题的解决与演示" />
+        <option name="enabledSigning" value="true" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="icons">
+          <JavaFxApplicationIcons>
+            <option name="windowsIcon" value="$PROJECT_DIR$/src/main/resources/ahvgz-iovzk-001.ico" />
+          </JavaFxApplicationIcons>
+        </option>
+        <option name="keystore" value="" />
+        <option name="title" value="操作系统进程同步演示" />
+        <option name="vendor" value="2309_132_zts" />
+        <option name="version" value="v1.0" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="OSdemo.jar">
+        <element id="module-output" name="OSdemo" />
+      </element>
+    </root>
+  </artifact>
+</component>
